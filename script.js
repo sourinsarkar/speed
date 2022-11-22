@@ -75,7 +75,7 @@ function initTyping() {
         characters[charIndex].classList.add("active");
 
         let wpm = Math.round(((charIndex - mistakes) / 5) / (maxTime - timeLeft) * 60);
-        wpm = wpm < 0 || !wpm || wpm === Infinity ? 0: wpm;
+        wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
 
         wpmTag.innerText = wpm;
         mistakeTag.innerText = mistakes;
@@ -112,3 +112,16 @@ function resetGame() {
 loadParagraph();
 inpField.addEventListener("input", initTyping);
 tryAgainBtn.addEventListener("click", resetGame);
+
+// JQUERY-----------------------------------------------------------------------
+
+$(document).ready(function () {
+    $("button").mouseover(function () {
+        $("button").css("background-color", "#888");
+        $("button").css("color", "#fff");
+    });
+    $("button").mouseout(function () {
+        $("button").css("background-color", "#000");
+        $("button").css("color", "#007acc");
+    });
+});
